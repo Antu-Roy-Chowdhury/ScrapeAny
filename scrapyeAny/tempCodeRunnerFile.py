@@ -24,7 +24,7 @@ class MySpider(scrapy.Spider):
         result = {}
 
         if "title" in self.data_types:
-            result["title"] = response.css("spans .title::text").getall()
+            result["title"] = response.css("title::text").getall()
             self.save_to_file("title.txt", result["title"])
 
         if "images" in self.data_types:
